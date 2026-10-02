@@ -1,0 +1,10 @@
+# PrivWatch - Requirements
+# Python dependencies for PrivWatch v2.0
+
+# Optional: PDF report generation (uncomment to enable)
+# reportlab>=3.6.0
+# OR
+# fpdf2>=2.7.0
+
+# Core dependencies (Python 3 standard library used - no external deps required!)
+# All functionality works with Python 3.6+ standard library

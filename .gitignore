@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+.pytest_cache/
+reports/
+*.log
+.DS_Store
+privwatch_demo.html
+red_mode_output.txt

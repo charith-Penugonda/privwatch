@@ -1,0 +1,72 @@
+{
+  "vectors": [
+    {
+      "id": "suid",
+      "name": "SUID/SGID Binaries",
+      "description": "Files with setuid/setgid bits that run with elevated privileges",
+      "default_severity": "HIGH",
+      "risk_factors": {
+        "writeable_binary": "CRITICAL",
+        "known_exploit": "CRITICAL",
+        "world_writeable_parent": "HIGH",
+        "uncommon_binary": "MEDIUM"
+      }
+    },
+    {
+      "id": "sudo",
+      "name": "Sudo Misconfigurations",
+      "description": "Dangerous sudo permissions in /etc/sudoers",
+      "default_severity": "HIGH",
+      "risk_factors": {
+        "nopasswd": "CRITICAL",
+        "all_commands": "CRITICAL",
+        "shell_access": "HIGH",
+        "dangerous_binary": "HIGH"
+      }
+    },
+    {
+      "id": "passwd",
+      "name": "Writable Password Files",
+      "description": "Write access to /etc/passwd or /etc/shadow",
+      "default_severity": "CRITICAL",
+      "risk_factors": {
+        "passwd_writeable": "CRITICAL",
+        "shadow_writeable": "CRITICAL",
+        "passwd_readable": "HIGH"
+      }
+    },
+    {
+      "id": "cron",
+      "name": "Cron Job Exploitation",
+      "description": "Writable cron jobs running as root",
+      "default_severity": "HIGH",
+      "risk_factors": {
+        "root_cron_writeable": "CRITICAL",
+        "cron_script_writeable": "HIGH",
+        "cron_path_hijack": "HIGH"
+      }
+    },
+    {
+      "id": "kernel",
+      "name": "Kernel Exploits",
+      "description": "Known vulnerable kernel versions",
+      "default_severity": "HIGH",
+      "risk_factors": {
+        "public_exploit": "CRITICAL",
+        "old_kernel": "HIGH",
+        "no_patches": "MEDIUM"
+      }
+    },
+    {
+      "id": "capabilities",
+      "name": "Linux Capabilities",
+      "description": "Dangerous capabilities set on binaries",
+      "default_severity": "HIGH",
+      "risk_factors": {
+        "cap_setuid": "CRITICAL",
+        "cap_sys_admin": "HIGH",
+        "cap_dac_override": "HIGH"
+      }
+    }
+  ]
+}
