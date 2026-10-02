@@ -207,7 +207,7 @@ This project demonstrates:
 
 ## 📝 Project Information
 
-- **Author**: BTech CSE Cybersecurity Student
+- **Author**: Charith
 - **Version**: 1.0 (Prototype)
 - **Language**: Python 3
 - **License**: Educational Use
@@ -225,5 +225,7 @@ Developed as part of BTech CSE curriculum project focusing on:
 ## 📞 Contact & Support
 
 For questions about this project, please contact through academic channels.
+email- cherumaddy@gmail.com
+contact- 7396792869
 
 **Remember**: Always practice ethical hacking and obtain proper authorization before testing any system.
