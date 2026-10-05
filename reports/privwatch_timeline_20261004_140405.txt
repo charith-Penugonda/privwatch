@@ -1,0 +1,36 @@
+================================================================================
+PrivWatch Security Report - TIMELINE Mode
+Generated: 2026-10-04 14:04:05
+================================================================================
+
+SUMMARY
+--------------------------------------------------------------------------------
+Total Findings: 2
+
+MEDIUM: 2
+
+================================================================================
+
+DETAILED FINDINGS
+--------------------------------------------------------------------------------
+
+Finding #1
+Severity: MEDIUM
+Vector: SUDO
+Title: Cannot read /var/log/auth.log
+Description: Unable to analyze sudo logs: [Errno 2] No such file or directory: '/var/log/auth.log'
+Evidence: [Errno 2] No such file or directory: '/var/log/auth.log'
+Remediation: Check file permissions and path
+
+--------------------------------------------------------------------------------
+
+Finding #2
+Severity: MEDIUM
+Vector: SUID/SGID
+Title: Cannot read /var/log/syslog
+Description: Unable to analyze SUID logs: [Errno 2] No such file or directory: '/var/log/syslog'
+Evidence: [Errno 2] No such file or directory: '/var/log/syslog'
+Remediation: Check file permissions and path
+
+--------------------------------------------------------------------------------
+

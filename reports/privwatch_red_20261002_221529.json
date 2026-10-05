@@ -1,0 +1,521 @@
+{
+  "metadata": {
+    "tool": "PrivWatch",
+    "version": "1.0",
+    "mode": "red",
+    "timestamp": "2026-10-02T22:15:29.360831",
+    "total_findings": 55
+  },
+  "summary": {
+    "by_severity": {
+      "CRITICAL": 2,
+      "HIGH": 46,
+      "MEDIUM": 7,
+      "LOW": 0,
+      "INFO": 0
+    },
+    "by_vector": {
+      "SUID/SGID": 47,
+      "PASSWD/SHADOW": 1,
+      "KERNEL": 2,
+      "CAPABILITIES": 5
+    }
+  },
+  "findings": [
+    {
+      "vector": "SUID/SGID",
+      "severity": "HIGH",
+      "title": "SUID binary found: mount.cifs",
+      "description": "Binary /usr/sbin/mount.cifs has SUID/SGID bit set. May be exploitable if vulnerable or misconfigured.",
+      "evidence": "Binary: /usr/sbin/mount.cifs\nPermissions: rwsr-xr-x",
+      "remediation": "Review necessity of SUID bit for /usr/sbin/mount.cifs",
+      "timestamp": "2026-10-02T22:15:24.710420"
+    },
+    {
+      "vector": "SUID/SGID",
+      "severity": "HIGH",
+      "title": "SUID binary found: pppd",
+      "description": "Binary /usr/sbin/pppd has SUID/SGID bit set. May be exploitable if vulnerable or misconfigured.",
+      "evidence": "Binary: /usr/sbin/pppd\nPermissions: rwsr-xr--",
+      "remediation": "Review necessity of SUID bit for /usr/sbin/pppd",
+      "timestamp": "2026-10-02T22:15:24.710440"
+    },
+    {
+      "vector": "SUID/SGID",
+      "severity": "HIGH",
+      "title": "SUID binary found: mount.nfs",
+      "description": "Binary /usr/sbin/mount.nfs has SUID/SGID bit set. May be exploitable if vulnerable or misconfigured.",
+      "evidence": "Binary: /usr/sbin/mount.nfs\nPermissions: rwsr-xr-x",
+      "remediation": "Review necessity of SUID bit for /usr/sbin/mount.nfs",
+      "timestamp": "2026-10-02T22:15:24.710449"
+    },
+    {
+      "vector": "SUID/SGID",
+      "severity": "HIGH",
+      "title": "SUID binary found: unix_chkpwd",
+      "description": "Binary /usr/sbin/unix_chkpwd has SUID/SGID bit set. May be exploitable if vulnerable or misconfigured.",
+      "evidence": "Binary: /usr/sbin/unix_chkpwd\nPermissions: rwxr-sr-x",
+      "remediation": "Review necessity of SUID bit for /usr/sbin/unix_chkpwd",
+      "timestamp": "2026-10-02T22:15:24.710457"
+    },
+    {
+      "vector": "SUID/SGID",
+      "severity": "HIGH",
+      "title": "SUID binary found: dbus-daemon-launch-helper",
+      "description": "Binary /usr/lib/dbus-1.0/dbus-daemon-launch-helper has SUID/SGID bit set. May be exploitable if vulnerable or misconfigured.",
+      "evidence": "Binary: /usr/lib/dbus-1.0/dbus-daemon-launch-helper\nPermissions: rwsr-xr--",
+      "remediation": "Review necessity of SUID bit for /usr/lib/dbus-1.0/dbus-daemon-launch-helper",
+      "timestamp": "2026-10-02T22:15:24.710466"
+    },
+    {
+      "vector": "SUID/SGID",
+      "severity": "HIGH",
+      "title": "SUID binary found: ssh-keysign",
+      "description": "Binary /usr/lib/openssh/ssh-keysign has SUID/SGID bit set. May be exploitable if vulnerable or misconfigured.",
+      "evidence": "Binary: /usr/lib/openssh/ssh-keysign\nPermissions: rwsr-xr-x",
+      "remediation": "Review necessity of SUID bit for /usr/lib/openssh/ssh-keysign",
+      "timestamp": "2026-10-02T22:15:24.710473"
+    },
+    {
+      "vector": "SUID/SGID",
+      "severity": "HIGH",
+      "title": "SUID binary found: chrome-sandbox",
+      "description": "Binary /usr/lib/chromium/chrome-sandbox has SUID/SGID bit set. May be exploitable if vulnerable or misconfigured.",
+      "evidence": "Binary: /usr/lib/chromium/chrome-sandbox\nPermissions: rwsr-xr-x",
+      "remediation": "Review necessity of SUID bit for /usr/lib/chromium/chrome-sandbox",
+      "timestamp": "2026-10-02T22:15:24.710480"
+    },
+    {
+      "vector": "SUID/SGID",
+      "severity": "HIGH",
+      "title": "SUID binary found: VirtualBoxVM",
+      "description": "Binary /usr/lib/virtualbox/VirtualBoxVM has SUID/SGID bit set. May be exploitable if vulnerable or misconfigured.",
+      "evidence": "Binary: /usr/lib/virtualbox/VirtualBoxVM\nPermissions: rwsr-sr-x",
+      "remediation": "Review necessity of SUID bit for /usr/lib/virtualbox/VirtualBoxVM",
+      "timestamp": "2026-10-02T22:15:24.710487"
+    },
+    {
+      "vector": "SUID/SGID",
+      "severity": "HIGH",
+      "title": "SUID binary found: VBoxNetNAT",
+      "description": "Binary /usr/lib/virtualbox/VBoxNetNAT has SUID/SGID bit set. May be exploitable if vulnerable or misconfigured.",
+      "evidence": "Binary: /usr/lib/virtualbox/VBoxNetNAT\nPermissions: rwsr-sr-x",
+      "remediation": "Review necessity of SUID bit for /usr/lib/virtualbox/VBoxNetNAT",
+      "timestamp": "2026-10-02T22:15:24.710493"
+    },
+    {
+      "vector": "SUID/SGID",
+      "severity": "CRITICAL",
+      "title": "Exploitable SUID binary: VBoxNetDHCP",
+      "description": "The binary /usr/lib/virtualbox/VBoxNetDHCP has SUID bit set and is known to be exploitable. Copy files to read sensitive data",
+      "evidence": "Binary: /usr/lib/virtualbox/VBoxNetDHCP\nPermissions: rwsr-sr-x\nExploit: LFILE=/etc/shadow",
+      "remediation": "Remove SUID bit: chmod u-s /usr/lib/virtualbox/VBoxNetDHCP\nOr review if elevated privileges are necessary for this binary.",
+      "timestamp": "2026-10-02T22:15:24.710504"
+    },
+    {
+      "vector": "SUID/SGID",
+      "severity": "CRITICAL",
+      "title": "Exploitable SUID binary: VBoxHeadless",
+      "description": "The binary /usr/lib/virtualbox/VBoxHeadless has SUID bit set and is known to be exploitable. Pager with command execution via !",
+      "evidence": "Binary: /usr/lib/virtualbox/VBoxHeadless\nPermissions: rwsr-sr-x\nExploit: less /etc/profile",
+      "remediation": "Remove SUID bit: chmod u-s /usr/lib/virtualbox/VBoxHeadless\nOr review if elevated privileges are necessary for this binary.",
+      "timestamp": "2026-10-02T22:15:24.710513"
+    },
+    {
+      "vector": "SUID/SGID",
+      "severity": "HIGH",
+      "title": "SUID binary found: VBoxSDL",
+      "description": "Binary /usr/lib/virtualbox/VBoxSDL has SUID/SGID bit set. May be exploitable if vulnerable or misconfigured.",
+      "evidence": "Binary: /usr/lib/virtualbox/VBoxSDL\nPermissions: rwsr-sr-x",
+      "remediation": "Review necessity of SUID bit for /usr/lib/virtualbox/VBoxSDL",
+      "timestamp": "2026-10-02T22:15:24.710519"
+    },
+    {
+      "vector": "SUID/SGID",
+      "severity": "HIGH",
+      "title": "SUID binary found: VBoxNetAdpCtl",
+      "description": "Binary /usr/lib/virtualbox/VBoxNetAdpCtl has SUID/SGID bit set. May be exploitable if vulnerable or misconfigured.",
+      "evidence": "Binary: /usr/lib/virtualbox/VBoxNetAdpCtl\nPermissions: rwsr-sr-x",
+      "remediation": "Review necessity of SUID bit for /usr/lib/virtualbox/VBoxNetAdpCtl",
+      "timestamp": "2026-10-02T22:15:24.710530"
+    },
+    {
+      "vector": "SUID/SGID",
+      "severity": "HIGH",
+      "title": "SUID binary found: Xorg.wrap",
+      "description": "Binary /usr/lib/xorg/Xorg.wrap has SUID/SGID bit set. May be exploitable if vulnerable or misconfigured.",
+      "evidence": "Binary: /usr/lib/xorg/Xorg.wrap\nPermissions: rwsr-sr-x",
+      "remediation": "Review necessity of SUID bit for /usr/lib/xorg/Xorg.wrap",
+      "timestamp": "2026-10-02T22:15:24.710539"
+    },
+    {
+      "vector": "SUID/SGID",
+      "severity": "HIGH",
+      "title": "SUID binary found: kismet_cap_nrf_51822",
+      "description": "Binary /usr/bin/kismet_cap_nrf_51822 has SUID/SGID bit set. May be exploitable if vulnerable or misconfigured.",
+      "evidence": "Binary: /usr/bin/kismet_cap_nrf_51822\nPermissions: rwsr-xr--",
+      "remediation": "Review necessity of SUID bit for /usr/bin/kismet_cap_nrf_51822",
+      "timestamp": "2026-10-02T22:15:24.710546"
+    },
+    {
+      "vector": "SUID/SGID",
+      "severity": "HIGH",
+      "title": "SUID binary found: kismet_cap_hak5_wifi_coconut",
+      "description": "Binary /usr/bin/kismet_cap_hak5_wifi_coconut has SUID/SGID bit set. May be exploitable if vulnerable or misconfigured.",
+      "evidence": "Binary: /usr/bin/kismet_cap_hak5_wifi_coconut\nPermissions: rwsr-xr--",
+      "remediation": "Review necessity of SUID bit for /usr/bin/kismet_cap_hak5_wifi_coconut",
+      "timestamp": "2026-10-02T22:15:24.710552"
+    },
+    {
+      "vector": "SUID/SGID",
+      "severity": "HIGH",
+      "title": "SUID binary found: kismet_cap_ti_cc_2540",
+      "description": "Binary /usr/bin/kismet_cap_ti_cc_2540 has SUID/SGID bit set. May be exploitable if vulnerable or misconfigured.",
+      "evidence": "Binary: /usr/bin/kismet_cap_ti_cc_2540\nPermissions: rwsr-xr--",
+      "remediation": "Review necessity of SUID bit for /usr/bin/kismet_cap_ti_cc_2540",
+      "timestamp": "2026-10-02T22:15:24.710558"
+    },
+    {
+      "vector": "SUID/SGID",
+      "severity": "HIGH",
+      "title": "SUID binary found: expiry",
+      "description": "Binary /usr/bin/expiry has SUID/SGID bit set. May be exploitable if vulnerable or misconfigured.",
+      "evidence": "Binary: /usr/bin/expiry\nPermissions: rwxr-sr-x",
+      "remediation": "Review necessity of SUID bit for /usr/bin/expiry",
+      "timestamp": "2026-10-02T22:15:24.710565"
+    },
+    {
+      "vector": "SUID/SGID",
+      "severity": "HIGH",
+      "title": "SUID binary found: crontab",
+      "description": "Binary /usr/bin/crontab has SUID/SGID bit set. May be exploitable if vulnerable or misconfigured.",
+      "evidence": "Binary: /usr/bin/crontab\nPermissions: rwxr-sr-x",
+      "remediation": "Review necessity of SUID bit for /usr/bin/crontab",
+      "timestamp": "2026-10-02T22:15:24.710571"
+    },
+    {
+      "vector": "SUID/SGID",
+      "severity": "HIGH",
+      "title": "SUID binary found: ntfs-3g",
+      "description": "Binary /usr/bin/ntfs-3g has SUID/SGID bit set. May be exploitable if vulnerable or misconfigured.",
+      "evidence": "Binary: /usr/bin/ntfs-3g\nPermissions: rwsr-xr-x",
+      "remediation": "Review necessity of SUID bit for /usr/bin/ntfs-3g",
+      "timestamp": "2026-10-02T22:15:24.710577"
+    },
+    {
+      "vector": "SUID/SGID",
+      "severity": "HIGH",
+      "title": "SUID binary found: chsh",
+      "description": "Binary /usr/bin/chsh has SUID/SGID bit set. May be exploitable if vulnerable or misconfigured.",
+      "evidence": "Binary: /usr/bin/chsh\nPermissions: rwsr-xr-x",
+      "remediation": "Review necessity of SUID bit for /usr/bin/chsh",
+      "timestamp": "2026-10-02T22:15:24.710583"
+    },
+    {
+      "vector": "SUID/SGID",
+      "severity": "HIGH",
+      "title": "SUID binary found: vmware-user-suid-wrapper",
+      "description": "Binary /usr/bin/vmware-user-suid-wrapper has SUID/SGID bit set. May be exploitable if vulnerable or misconfigured.",
+      "evidence": "Binary: /usr/bin/vmware-user-suid-wrapper\nPermissions: rwsr-xr-x",
+      "remediation": "Review necessity of SUID bit for /usr/bin/vmware-user-suid-wrapper",
+      "timestamp": "2026-10-02T22:15:24.710590"
+    },
+    {
+      "vector": "SUID/SGID",
+      "severity": "HIGH",
+      "title": "SUID binary found: gpasswd",
+      "description": "Binary /usr/bin/gpasswd has SUID/SGID bit set. May be exploitable if vulnerable or misconfigured.",
+      "evidence": "Binary: /usr/bin/gpasswd\nPermissions: rwsr-xr-x",
+      "remediation": "Review necessity of SUID bit for /usr/bin/gpasswd",
+      "timestamp": "2026-10-02T22:15:24.710596"
+    },
+    {
+      "vector": "SUID/SGID",
+      "severity": "HIGH",
+      "title": "SUID binary found: su",
+      "description": "Binary /usr/bin/su has SUID/SGID bit set. May be exploitable if vulnerable or misconfigured.",
+      "evidence": "Binary: /usr/bin/su\nPermissions: rwsr-xr-x",
+      "remediation": "Review necessity of SUID bit for /usr/bin/su",
+      "timestamp": "2026-10-02T22:15:24.710601"
+    },
+    {
+      "vector": "SUID/SGID",
+      "severity": "HIGH",
+      "title": "SUID binary found: newgrp",
+      "description": "Binary /usr/bin/newgrp has SUID/SGID bit set. May be exploitable if vulnerable or misconfigured.",
+      "evidence": "Binary: /usr/bin/newgrp\nPermissions: rwsr-xr-x",
+      "remediation": "Review necessity of SUID bit for /usr/bin/newgrp",
+      "timestamp": "2026-10-02T22:15:24.710607"
+    },
+    {
+      "vector": "SUID/SGID",
+      "severity": "HIGH",
+      "title": "SUID binary found: passwd",
+      "description": "Binary /usr/bin/passwd has SUID/SGID bit set. May be exploitable if vulnerable or misconfigured.",
+      "evidence": "Binary: /usr/bin/passwd\nPermissions: rwsr-xr-x",
+      "remediation": "Review necessity of SUID bit for /usr/bin/passwd",
+      "timestamp": "2026-10-02T22:15:24.710613"
+    },
+    {
+      "vector": "SUID/SGID",
+      "severity": "HIGH",
+      "title": "SUID binary found: kismet_cap_linux_wifi",
+      "description": "Binary /usr/bin/kismet_cap_linux_wifi has SUID/SGID bit set. May be exploitable if vulnerable or misconfigured.",
+      "evidence": "Binary: /usr/bin/kismet_cap_linux_wifi\nPermissions: rwsr-xr--",
+      "remediation": "Review necessity of SUID bit for /usr/bin/kismet_cap_linux_wifi",
+      "timestamp": "2026-10-02T22:15:24.710619"
+    },
+    {
+      "vector": "SUID/SGID",
+      "severity": "HIGH",
+      "title": "SUID binary found: fusermount3",
+      "description": "Binary /usr/bin/fusermount3 has SUID/SGID bit set. May be exploitable if vulnerable or misconfigured.",
+      "evidence": "Binary: /usr/bin/fusermount3\nPermissions: rwsr-xr-x",
+      "remediation": "Review necessity of SUID bit for /usr/bin/fusermount3",
+      "timestamp": "2026-10-02T22:15:24.710624"
+    },
+    {
+      "vector": "SUID/SGID",
+      "severity": "HIGH",
+      "title": "SUID binary found: kismet_cap_nrf_52840",
+      "description": "Binary /usr/bin/kismet_cap_nrf_52840 has SUID/SGID bit set. May be exploitable if vulnerable or misconfigured.",
+      "evidence": "Binary: /usr/bin/kismet_cap_nrf_52840\nPermissions: rwsr-xr--",
+      "remediation": "Review necessity of SUID bit for /usr/bin/kismet_cap_nrf_52840",
+      "timestamp": "2026-10-02T22:15:24.710630"
+    },
+    {
+      "vector": "SUID/SGID",
+      "severity": "HIGH",
+      "title": "SUID binary found: rsh-redone-rlogin",
+      "description": "Binary /usr/bin/rsh-redone-rlogin has SUID/SGID bit set. May be exploitable if vulnerable or misconfigured.",
+      "evidence": "Binary: /usr/bin/rsh-redone-rlogin\nPermissions: rwsr-xr-x",
+      "remediation": "Review necessity of SUID bit for /usr/bin/rsh-redone-rlogin",
+      "timestamp": "2026-10-02T22:15:24.710636"
+    },
+    {
+      "vector": "SUID/SGID",
+      "severity": "HIGH",
+      "title": "SUID binary found: ssh-agent",
+      "description": "Binary /usr/bin/ssh-agent has SUID/SGID bit set. May be exploitable if vulnerable or misconfigured.",
+      "evidence": "Binary: /usr/bin/ssh-agent\nPermissions: rwxr-sr-x",
+      "remediation": "Review necessity of SUID bit for /usr/bin/ssh-agent",
+      "timestamp": "2026-10-02T22:15:24.710642"
+    },
+    {
+      "vector": "SUID/SGID",
+      "severity": "HIGH",
+      "title": "SUID binary found: pkexec",
+      "description": "Binary /usr/bin/pkexec has SUID/SGID bit set. May be exploitable if vulnerable or misconfigured.",
+      "evidence": "Binary: /usr/bin/pkexec\nPermissions: rwsr-xr-x",
+      "remediation": "Review necessity of SUID bit for /usr/bin/pkexec",
+      "timestamp": "2026-10-02T22:15:24.710648"
+    },
+    {
+      "vector": "SUID/SGID",
+      "severity": "HIGH",
+      "title": "SUID binary found: kismet_cap_nxp_kw41z",
+      "description": "Binary /usr/bin/kismet_cap_nxp_kw41z has SUID/SGID bit set. May be exploitable if vulnerable or misconfigured.",
+      "evidence": "Binary: /usr/bin/kismet_cap_nxp_kw41z\nPermissions: rwsr-xr--",
+      "remediation": "Review necessity of SUID bit for /usr/bin/kismet_cap_nxp_kw41z",
+      "timestamp": "2026-10-02T22:15:24.710653"
+    },
+    {
+      "vector": "SUID/SGID",
+      "severity": "HIGH",
+      "title": "SUID binary found: kismet_cap_nrf_mousejack",
+      "description": "Binary /usr/bin/kismet_cap_nrf_mousejack has SUID/SGID bit set. May be exploitable if vulnerable or misconfigured.",
+      "evidence": "Binary: /usr/bin/kismet_cap_nrf_mousejack\nPermissions: rwsr-xr--",
+      "remediation": "Review necessity of SUID bit for /usr/bin/kismet_cap_nrf_mousejack",
+      "timestamp": "2026-10-02T22:15:24.710659"
+    },
+    {
+      "vector": "SUID/SGID",
+      "severity": "HIGH",
+      "title": "SUID binary found: dotlockfile",
+      "description": "Binary /usr/bin/dotlockfile has SUID/SGID bit set. May be exploitable if vulnerable or misconfigured.",
+      "evidence": "Binary: /usr/bin/dotlockfile\nPermissions: rwxr-sr-x",
+      "remediation": "Review necessity of SUID bit for /usr/bin/dotlockfile",
+      "timestamp": "2026-10-02T22:15:24.710665"
+    },
+    {
+      "vector": "SUID/SGID",
+      "severity": "HIGH",
+      "title": "SUID binary found: mount",
+      "description": "Binary /usr/bin/mount has SUID/SGID bit set. May be exploitable if vulnerable or misconfigured.",
+      "evidence": "Binary: /usr/bin/mount\nPermissions: rwsr-xr-x",
+      "remediation": "Review necessity of SUID bit for /usr/bin/mount",
+      "timestamp": "2026-10-02T22:15:24.710671"
+    },
+    {
+      "vector": "SUID/SGID",
+      "severity": "HIGH",
+      "title": "SUID binary found: kismet_cap_rz_killerbee",
+      "description": "Binary /usr/bin/kismet_cap_rz_killerbee has SUID/SGID bit set. May be exploitable if vulnerable or misconfigured.",
+      "evidence": "Binary: /usr/bin/kismet_cap_rz_killerbee\nPermissions: rwsr-xr--",
+      "remediation": "Review necessity of SUID bit for /usr/bin/kismet_cap_rz_killerbee",
+      "timestamp": "2026-10-02T22:15:24.710677"
+    },
+    {
+      "vector": "SUID/SGID",
+      "severity": "HIGH",
+      "title": "SUID binary found: kismet_cap_ubertooth_one",
+      "description": "Binary /usr/bin/kismet_cap_ubertooth_one has SUID/SGID bit set. May be exploitable if vulnerable or misconfigured.",
+      "evidence": "Binary: /usr/bin/kismet_cap_ubertooth_one\nPermissions: rwsr-xr--",
+      "remediation": "Review necessity of SUID bit for /usr/bin/kismet_cap_ubertooth_one",
+      "timestamp": "2026-10-02T22:15:24.710682"
+    },
+    {
+      "vector": "SUID/SGID",
+      "severity": "HIGH",
+      "title": "SUID binary found: plocate",
+      "description": "Binary /usr/bin/plocate has SUID/SGID bit set. May be exploitable if vulnerable or misconfigured.",
+      "evidence": "Binary: /usr/bin/plocate\nPermissions: rwxr-sr-x",
+      "remediation": "Review necessity of SUID bit for /usr/bin/plocate",
+      "timestamp": "2026-10-02T22:15:24.710688"
+    },
+    {
+      "vector": "SUID/SGID",
+      "severity": "HIGH",
+      "title": "SUID binary found: sudo",
+      "description": "Binary /usr/bin/sudo has SUID/SGID bit set. May be exploitable if vulnerable or misconfigured.",
+      "evidence": "Binary: /usr/bin/sudo\nPermissions: rwsr-xr-x",
+      "remediation": "Review necessity of SUID bit for /usr/bin/sudo",
+      "timestamp": "2026-10-02T22:15:24.710694"
+    },
+    {
+      "vector": "SUID/SGID",
+      "severity": "HIGH",
+      "title": "SUID binary found: kismet_cap_linux_bluetooth",
+      "description": "Binary /usr/bin/kismet_cap_linux_bluetooth has SUID/SGID bit set. May be exploitable if vulnerable or misconfigured.",
+      "evidence": "Binary: /usr/bin/kismet_cap_linux_bluetooth\nPermissions: rwsr-xr--",
+      "remediation": "Review necessity of SUID bit for /usr/bin/kismet_cap_linux_bluetooth",
+      "timestamp": "2026-10-02T22:15:24.710700"
+    },
+    {
+      "vector": "SUID/SGID",
+      "severity": "HIGH",
+      "title": "SUID binary found: rsh-redone-rsh",
+      "description": "Binary /usr/bin/rsh-redone-rsh has SUID/SGID bit set. May be exploitable if vulnerable or misconfigured.",
+      "evidence": "Binary: /usr/bin/rsh-redone-rsh\nPermissions: rwsr-xr-x",
+      "remediation": "Review necessity of SUID bit for /usr/bin/rsh-redone-rsh",
+      "timestamp": "2026-10-02T22:15:24.710706"
+    },
+    {
+      "vector": "SUID/SGID",
+      "severity": "HIGH",
+      "title": "SUID binary found: chage",
+      "description": "Binary /usr/bin/chage has SUID/SGID bit set. May be exploitable if vulnerable or misconfigured.",
+      "evidence": "Binary: /usr/bin/chage\nPermissions: rwxr-sr-x",
+      "remediation": "Review necessity of SUID bit for /usr/bin/chage",
+      "timestamp": "2026-10-02T22:15:24.710712"
+    },
+    {
+      "vector": "SUID/SGID",
+      "severity": "HIGH",
+      "title": "SUID binary found: chfn",
+      "description": "Binary /usr/bin/chfn has SUID/SGID bit set. May be exploitable if vulnerable or misconfigured.",
+      "evidence": "Binary: /usr/bin/chfn\nPermissions: rwsr-xr-x",
+      "remediation": "Review necessity of SUID bit for /usr/bin/chfn",
+      "timestamp": "2026-10-02T22:15:24.710732"
+    },
+    {
+      "vector": "SUID/SGID",
+      "severity": "HIGH",
+      "title": "SUID binary found: umount",
+      "description": "Binary /usr/bin/umount has SUID/SGID bit set. May be exploitable if vulnerable or misconfigured.",
+      "evidence": "Binary: /usr/bin/umount\nPermissions: rwsr-xr-x",
+      "remediation": "Review necessity of SUID bit for /usr/bin/umount",
+      "timestamp": "2026-10-02T22:15:24.710738"
+    },
+    {
+      "vector": "SUID/SGID",
+      "severity": "HIGH",
+      "title": "SUID binary found: kismet_cap_ti_cc_2531",
+      "description": "Binary /usr/bin/kismet_cap_ti_cc_2531 has SUID/SGID bit set. May be exploitable if vulnerable or misconfigured.",
+      "evidence": "Binary: /usr/bin/kismet_cap_ti_cc_2531\nPermissions: rwsr-xr--",
+      "remediation": "Review necessity of SUID bit for /usr/bin/kismet_cap_ti_cc_2531",
+      "timestamp": "2026-10-02T22:15:24.710745"
+    },
+    {
+      "vector": "SUID/SGID",
+      "severity": "HIGH",
+      "title": "SUID binary found: chrome-sandbox",
+      "description": "Binary /opt/Vysor/chrome-sandbox has SUID/SGID bit set. May be exploitable if vulnerable or misconfigured.",
+      "evidence": "Binary: /opt/Vysor/chrome-sandbox\nPermissions: rwsr-xr-x",
+      "remediation": "Review necessity of SUID bit for /opt/Vysor/chrome-sandbox",
+      "timestamp": "2026-10-02T22:15:24.710752"
+    },
+    {
+      "vector": "PASSWD/SHADOW",
+      "severity": "HIGH",
+      "title": "Readable password backup: passwd-",
+      "description": "Backup password file /etc/passwd- is readable. May contain old credentials or configuration.",
+      "evidence": "File: /etc/passwd-\nReadable by current user",
+      "remediation": "Secure or remove backup file: /etc/passwd-",
+      "timestamp": "2026-10-02T22:15:24.740517"
+    },
+    {
+      "vector": "KERNEL",
+      "severity": "MEDIUM",
+      "title": "Kernel version: 7.1.5+kali-amd64",
+      "description": "System information:\nKernel: 7.1.5+kali-amd64\nSystem: Linux\nMachine: x86_64",
+      "evidence": "uname -r output: 7.1.5+kali-amd64",
+      "remediation": "Check kernel version against known exploits",
+      "timestamp": "2026-10-02T22:15:24.743872"
+    },
+    {
+      "vector": "KERNEL",
+      "severity": "MEDIUM",
+      "title": "Kernel exploit enumeration recommended",
+      "description": "Use specialized tools for comprehensive kernel exploit checking:\n\u2022 linux-exploit-suggester\n\u2022 Linux Kernel CVE Exploits\n\u2022 searchsploit",
+      "evidence": "Current kernel: 7.1.5+kali-amd64",
+      "remediation": "Run: searchsploit linux kernel 7.1.5+kali\nOr: wget https://raw.githubusercontent.com/mzet-/linux-exploit-suggester/master/linux-exploit-suggester.sh\nchmod +x linux-exploit-suggester.sh && ./linux-exploit-suggester.sh",
+      "timestamp": "2026-10-02T22:15:24.743895"
+    },
+    {
+      "vector": "CAPABILITIES",
+      "severity": "MEDIUM",
+      "title": "Capability found on gst-ptp-helper cap_net_bind_service,cap_net_admin,cap_sys_nice: ep",
+      "description": "Binary /usr/lib/x86_64-linux-gnu/gstreamer1.0/gstreamer-1.0/gst-ptp-helper cap_net_bind_service,cap_net_admin,cap_sys_nice has ep capability. Review for potential exploitation.",
+      "evidence": "Binary: /usr/lib/x86_64-linux-gnu/gstreamer1.0/gstreamer-1.0/gst-ptp-helper cap_net_bind_service,cap_net_admin,cap_sys_nice\nCapability: ep",
+      "remediation": "Research exploitation techniques for ep",
+      "timestamp": "2026-10-02T22:15:29.360741"
+    },
+    {
+      "vector": "CAPABILITIES",
+      "severity": "MEDIUM",
+      "title": "Capability found on snap-confine cap_chown,cap_dac_override,cap_dac_read_search,cap_fowner,cap_sys_chroot,cap_sys_ptrace,cap_sys_admin,cap_sys_resource: p",
+      "description": "Binary /usr/lib/snapd/snap-confine cap_chown,cap_dac_override,cap_dac_read_search,cap_fowner,cap_sys_chroot,cap_sys_ptrace,cap_sys_admin,cap_sys_resource has p capability. Review for potential exploitation.",
+      "evidence": "Binary: /usr/lib/snapd/snap-confine cap_chown,cap_dac_override,cap_dac_read_search,cap_fowner,cap_sys_chroot,cap_sys_ptrace,cap_sys_admin,cap_sys_resource\nCapability: p",
+      "remediation": "Research exploitation techniques for p",
+      "timestamp": "2026-10-02T22:15:29.360756"
+    },
+    {
+      "vector": "CAPABILITIES",
+      "severity": "MEDIUM",
+      "title": "Capability found on nmap cap_net_bind_service,cap_net_admin,cap_net_raw: eip",
+      "description": "Binary /usr/lib/nmap/nmap cap_net_bind_service,cap_net_admin,cap_net_raw has eip capability. Review for potential exploitation.",
+      "evidence": "Binary: /usr/lib/nmap/nmap cap_net_bind_service,cap_net_admin,cap_net_raw\nCapability: eip",
+      "remediation": "Research exploitation techniques for eip",
+      "timestamp": "2026-10-02T22:15:29.360759"
+    },
+    {
+      "vector": "CAPABILITIES",
+      "severity": "MEDIUM",
+      "title": "Capability found on dumpcap cap_net_admin,cap_net_raw: eip",
+      "description": "Binary /usr/bin/dumpcap cap_net_admin,cap_net_raw has eip capability. Review for potential exploitation.",
+      "evidence": "Binary: /usr/bin/dumpcap cap_net_admin,cap_net_raw\nCapability: eip",
+      "remediation": "Research exploitation techniques for eip",
+      "timestamp": "2026-10-02T22:15:29.360762"
+    },
+    {
+      "vector": "CAPABILITIES",
+      "severity": "MEDIUM",
+      "title": "Capability found on fping cap_net_raw: ep",
+      "description": "Binary /usr/bin/fping cap_net_raw has ep capability. Review for potential exploitation.",
+      "evidence": "Binary: /usr/bin/fping cap_net_raw\nCapability: ep",
+      "remediation": "Research exploitation techniques for ep",
+      "timestamp": "2026-10-02T22:15:29.360764"
+    }
+  ]
+}

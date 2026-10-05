@@ -1,0 +1,633 @@
+================================================================================
+PrivWatch Security Report - RED Mode
+Generated: 2026-10-04 10:34:09
+================================================================================
+
+SUMMARY
+--------------------------------------------------------------------------------
+Total Findings: 55
+
+HIGH: 46
+CRITICAL: 2
+MEDIUM: 7
+
+================================================================================
+
+DETAILED FINDINGS
+--------------------------------------------------------------------------------
+
+Finding #1
+Severity: HIGH
+Vector: SUID/SGID
+Title: SUID binary found: mount.cifs
+Description: Binary /usr/sbin/mount.cifs has SUID/SGID bit set. May be exploitable if vulnerable or misconfigured.
+Evidence: Binary: /usr/sbin/mount.cifs
+Permissions: rwsr-xr-x
+Remediation: Review necessity of SUID bit for /usr/sbin/mount.cifs
+
+--------------------------------------------------------------------------------
+
+Finding #2
+Severity: HIGH
+Vector: SUID/SGID
+Title: SUID binary found: pppd
+Description: Binary /usr/sbin/pppd has SUID/SGID bit set. May be exploitable if vulnerable or misconfigured.
+Evidence: Binary: /usr/sbin/pppd
+Permissions: rwsr-xr--
+Remediation: Review necessity of SUID bit for /usr/sbin/pppd
+
+--------------------------------------------------------------------------------
+
+Finding #3
+Severity: HIGH
+Vector: SUID/SGID
+Title: SUID binary found: mount.nfs
+Description: Binary /usr/sbin/mount.nfs has SUID/SGID bit set. May be exploitable if vulnerable or misconfigured.
+Evidence: Binary: /usr/sbin/mount.nfs
+Permissions: rwsr-xr-x
+Remediation: Review necessity of SUID bit for /usr/sbin/mount.nfs
+
+--------------------------------------------------------------------------------
+
+Finding #4
+Severity: HIGH
+Vector: SUID/SGID
+Title: SUID binary found: unix_chkpwd
+Description: Binary /usr/sbin/unix_chkpwd has SUID/SGID bit set. May be exploitable if vulnerable or misconfigured.
+Evidence: Binary: /usr/sbin/unix_chkpwd
+Permissions: rwxr-sr-x
+Remediation: Review necessity of SUID bit for /usr/sbin/unix_chkpwd
+
+--------------------------------------------------------------------------------
+
+Finding #5
+Severity: HIGH
+Vector: SUID/SGID
+Title: SUID binary found: dbus-daemon-launch-helper
+Description: Binary /usr/lib/dbus-1.0/dbus-daemon-launch-helper has SUID/SGID bit set. May be exploitable if vulnerable or misconfigured.
+Evidence: Binary: /usr/lib/dbus-1.0/dbus-daemon-launch-helper
+Permissions: rwsr-xr--
+Remediation: Review necessity of SUID bit for /usr/lib/dbus-1.0/dbus-daemon-launch-helper
+
+--------------------------------------------------------------------------------
+
+Finding #6
+Severity: HIGH
+Vector: SUID/SGID
+Title: SUID binary found: ssh-keysign
+Description: Binary /usr/lib/openssh/ssh-keysign has SUID/SGID bit set. May be exploitable if vulnerable or misconfigured.
+Evidence: Binary: /usr/lib/openssh/ssh-keysign
+Permissions: rwsr-xr-x
+Remediation: Review necessity of SUID bit for /usr/lib/openssh/ssh-keysign
+
+--------------------------------------------------------------------------------
+
+Finding #7
+Severity: HIGH
+Vector: SUID/SGID
+Title: SUID binary found: chrome-sandbox
+Description: Binary /usr/lib/chromium/chrome-sandbox has SUID/SGID bit set. May be exploitable if vulnerable or misconfigured.
+Evidence: Binary: /usr/lib/chromium/chrome-sandbox
+Permissions: rwsr-xr-x
+Remediation: Review necessity of SUID bit for /usr/lib/chromium/chrome-sandbox
+
+--------------------------------------------------------------------------------
+
+Finding #8
+Severity: HIGH
+Vector: SUID/SGID
+Title: SUID binary found: VirtualBoxVM
+Description: Binary /usr/lib/virtualbox/VirtualBoxVM has SUID/SGID bit set. May be exploitable if vulnerable or misconfigured.
+Evidence: Binary: /usr/lib/virtualbox/VirtualBoxVM
+Permissions: rwsr-sr-x
+Remediation: Review necessity of SUID bit for /usr/lib/virtualbox/VirtualBoxVM
+
+--------------------------------------------------------------------------------
+
+Finding #9
+Severity: HIGH
+Vector: SUID/SGID
+Title: SUID binary found: VBoxNetNAT
+Description: Binary /usr/lib/virtualbox/VBoxNetNAT has SUID/SGID bit set. May be exploitable if vulnerable or misconfigured.
+Evidence: Binary: /usr/lib/virtualbox/VBoxNetNAT
+Permissions: rwsr-sr-x
+Remediation: Review necessity of SUID bit for /usr/lib/virtualbox/VBoxNetNAT
+
+--------------------------------------------------------------------------------
+
+Finding #10
+Severity: CRITICAL
+Vector: SUID/SGID
+Title: Exploitable SUID binary: VBoxNetDHCP
+Description: The binary /usr/lib/virtualbox/VBoxNetDHCP has SUID bit set and is known to be exploitable. Copy files to read sensitive data
+Evidence: Binary: /usr/lib/virtualbox/VBoxNetDHCP
+Permissions: rwsr-sr-x
+Exploit: LFILE=/etc/shadow
+Remediation: Remove SUID bit: chmod u-s /usr/lib/virtualbox/VBoxNetDHCP
+Or review if elevated privileges are necessary for this binary.
+
+--------------------------------------------------------------------------------
+
+Finding #11
+Severity: CRITICAL
+Vector: SUID/SGID
+Title: Exploitable SUID binary: VBoxHeadless
+Description: The binary /usr/lib/virtualbox/VBoxHeadless has SUID bit set and is known to be exploitable. Pager with command execution via !
+Evidence: Binary: /usr/lib/virtualbox/VBoxHeadless
+Permissions: rwsr-sr-x
+Exploit: less /etc/profile
+Remediation: Remove SUID bit: chmod u-s /usr/lib/virtualbox/VBoxHeadless
+Or review if elevated privileges are necessary for this binary.
+
+--------------------------------------------------------------------------------
+
+Finding #12
+Severity: HIGH
+Vector: SUID/SGID
+Title: SUID binary found: VBoxSDL
+Description: Binary /usr/lib/virtualbox/VBoxSDL has SUID/SGID bit set. May be exploitable if vulnerable or misconfigured.
+Evidence: Binary: /usr/lib/virtualbox/VBoxSDL
+Permissions: rwsr-sr-x
+Remediation: Review necessity of SUID bit for /usr/lib/virtualbox/VBoxSDL
+
+--------------------------------------------------------------------------------
+
+Finding #13
+Severity: HIGH
+Vector: SUID/SGID
+Title: SUID binary found: VBoxNetAdpCtl
+Description: Binary /usr/lib/virtualbox/VBoxNetAdpCtl has SUID/SGID bit set. May be exploitable if vulnerable or misconfigured.
+Evidence: Binary: /usr/lib/virtualbox/VBoxNetAdpCtl
+Permissions: rwsr-sr-x
+Remediation: Review necessity of SUID bit for /usr/lib/virtualbox/VBoxNetAdpCtl
+
+--------------------------------------------------------------------------------
+
+Finding #14
+Severity: HIGH
+Vector: SUID/SGID
+Title: SUID binary found: Xorg.wrap
+Description: Binary /usr/lib/xorg/Xorg.wrap has SUID/SGID bit set. May be exploitable if vulnerable or misconfigured.
+Evidence: Binary: /usr/lib/xorg/Xorg.wrap
+Permissions: rwsr-sr-x
+Remediation: Review necessity of SUID bit for /usr/lib/xorg/Xorg.wrap
+
+--------------------------------------------------------------------------------
+
+Finding #15
+Severity: HIGH
+Vector: SUID/SGID
+Title: SUID binary found: kismet_cap_nrf_51822
+Description: Binary /usr/bin/kismet_cap_nrf_51822 has SUID/SGID bit set. May be exploitable if vulnerable or misconfigured.
+Evidence: Binary: /usr/bin/kismet_cap_nrf_51822
+Permissions: rwsr-xr--
+Remediation: Review necessity of SUID bit for /usr/bin/kismet_cap_nrf_51822
+
+--------------------------------------------------------------------------------
+
+Finding #16
+Severity: HIGH
+Vector: SUID/SGID
+Title: SUID binary found: kismet_cap_hak5_wifi_coconut
+Description: Binary /usr/bin/kismet_cap_hak5_wifi_coconut has SUID/SGID bit set. May be exploitable if vulnerable or misconfigured.
+Evidence: Binary: /usr/bin/kismet_cap_hak5_wifi_coconut
+Permissions: rwsr-xr--
+Remediation: Review necessity of SUID bit for /usr/bin/kismet_cap_hak5_wifi_coconut
+
+--------------------------------------------------------------------------------
+
+Finding #17
+Severity: HIGH
+Vector: SUID/SGID
+Title: SUID binary found: kismet_cap_ti_cc_2540
+Description: Binary /usr/bin/kismet_cap_ti_cc_2540 has SUID/SGID bit set. May be exploitable if vulnerable or misconfigured.
+Evidence: Binary: /usr/bin/kismet_cap_ti_cc_2540
+Permissions: rwsr-xr--
+Remediation: Review necessity of SUID bit for /usr/bin/kismet_cap_ti_cc_2540
+
+--------------------------------------------------------------------------------
+
+Finding #18
+Severity: HIGH
+Vector: SUID/SGID
+Title: SUID binary found: expiry
+Description: Binary /usr/bin/expiry has SUID/SGID bit set. May be exploitable if vulnerable or misconfigured.
+Evidence: Binary: /usr/bin/expiry
+Permissions: rwxr-sr-x
+Remediation: Review necessity of SUID bit for /usr/bin/expiry
+
+--------------------------------------------------------------------------------
+
+Finding #19
+Severity: HIGH
+Vector: SUID/SGID
+Title: SUID binary found: crontab
+Description: Binary /usr/bin/crontab has SUID/SGID bit set. May be exploitable if vulnerable or misconfigured.
+Evidence: Binary: /usr/bin/crontab
+Permissions: rwxr-sr-x
+Remediation: Review necessity of SUID bit for /usr/bin/crontab
+
+--------------------------------------------------------------------------------
+
+Finding #20
+Severity: HIGH
+Vector: SUID/SGID
+Title: SUID binary found: ntfs-3g
+Description: Binary /usr/bin/ntfs-3g has SUID/SGID bit set. May be exploitable if vulnerable or misconfigured.
+Evidence: Binary: /usr/bin/ntfs-3g
+Permissions: rwsr-xr-x
+Remediation: Review necessity of SUID bit for /usr/bin/ntfs-3g
+
+--------------------------------------------------------------------------------
+
+Finding #21
+Severity: HIGH
+Vector: SUID/SGID
+Title: SUID binary found: chsh
+Description: Binary /usr/bin/chsh has SUID/SGID bit set. May be exploitable if vulnerable or misconfigured.
+Evidence: Binary: /usr/bin/chsh
+Permissions: rwsr-xr-x
+Remediation: Review necessity of SUID bit for /usr/bin/chsh
+
+--------------------------------------------------------------------------------
+
+Finding #22
+Severity: HIGH
+Vector: SUID/SGID
+Title: SUID binary found: vmware-user-suid-wrapper
+Description: Binary /usr/bin/vmware-user-suid-wrapper has SUID/SGID bit set. May be exploitable if vulnerable or misconfigured.
+Evidence: Binary: /usr/bin/vmware-user-suid-wrapper
+Permissions: rwsr-xr-x
+Remediation: Review necessity of SUID bit for /usr/bin/vmware-user-suid-wrapper
+
+--------------------------------------------------------------------------------
+
+Finding #23
+Severity: HIGH
+Vector: SUID/SGID
+Title: SUID binary found: gpasswd
+Description: Binary /usr/bin/gpasswd has SUID/SGID bit set. May be exploitable if vulnerable or misconfigured.
+Evidence: Binary: /usr/bin/gpasswd
+Permissions: rwsr-xr-x
+Remediation: Review necessity of SUID bit for /usr/bin/gpasswd
+
+--------------------------------------------------------------------------------
+
+Finding #24
+Severity: HIGH
+Vector: SUID/SGID
+Title: SUID binary found: su
+Description: Binary /usr/bin/su has SUID/SGID bit set. May be exploitable if vulnerable or misconfigured.
+Evidence: Binary: /usr/bin/su
+Permissions: rwsr-xr-x
+Remediation: Review necessity of SUID bit for /usr/bin/su
+
+--------------------------------------------------------------------------------
+
+Finding #25
+Severity: HIGH
+Vector: SUID/SGID
+Title: SUID binary found: newgrp
+Description: Binary /usr/bin/newgrp has SUID/SGID bit set. May be exploitable if vulnerable or misconfigured.
+Evidence: Binary: /usr/bin/newgrp
+Permissions: rwsr-xr-x
+Remediation: Review necessity of SUID bit for /usr/bin/newgrp
+
+--------------------------------------------------------------------------------
+
+Finding #26
+Severity: HIGH
+Vector: SUID/SGID
+Title: SUID binary found: passwd
+Description: Binary /usr/bin/passwd has SUID/SGID bit set. May be exploitable if vulnerable or misconfigured.
+Evidence: Binary: /usr/bin/passwd
+Permissions: rwsr-xr-x
+Remediation: Review necessity of SUID bit for /usr/bin/passwd
+
+--------------------------------------------------------------------------------
+
+Finding #27
+Severity: HIGH
+Vector: SUID/SGID
+Title: SUID binary found: kismet_cap_linux_wifi
+Description: Binary /usr/bin/kismet_cap_linux_wifi has SUID/SGID bit set. May be exploitable if vulnerable or misconfigured.
+Evidence: Binary: /usr/bin/kismet_cap_linux_wifi
+Permissions: rwsr-xr--
+Remediation: Review necessity of SUID bit for /usr/bin/kismet_cap_linux_wifi
+
+--------------------------------------------------------------------------------
+
+Finding #28
+Severity: HIGH
+Vector: SUID/SGID
+Title: SUID binary found: fusermount3
+Description: Binary /usr/bin/fusermount3 has SUID/SGID bit set. May be exploitable if vulnerable or misconfigured.
+Evidence: Binary: /usr/bin/fusermount3
+Permissions: rwsr-xr-x
+Remediation: Review necessity of SUID bit for /usr/bin/fusermount3
+
+--------------------------------------------------------------------------------
+
+Finding #29
+Severity: HIGH
+Vector: SUID/SGID
+Title: SUID binary found: kismet_cap_nrf_52840
+Description: Binary /usr/bin/kismet_cap_nrf_52840 has SUID/SGID bit set. May be exploitable if vulnerable or misconfigured.
+Evidence: Binary: /usr/bin/kismet_cap_nrf_52840
+Permissions: rwsr-xr--
+Remediation: Review necessity of SUID bit for /usr/bin/kismet_cap_nrf_52840
+
+--------------------------------------------------------------------------------
+
+Finding #30
+Severity: HIGH
+Vector: SUID/SGID
+Title: SUID binary found: rsh-redone-rlogin
+Description: Binary /usr/bin/rsh-redone-rlogin has SUID/SGID bit set. May be exploitable if vulnerable or misconfigured.
+Evidence: Binary: /usr/bin/rsh-redone-rlogin
+Permissions: rwsr-xr-x
+Remediation: Review necessity of SUID bit for /usr/bin/rsh-redone-rlogin
+
+--------------------------------------------------------------------------------
+
+Finding #31
+Severity: HIGH
+Vector: SUID/SGID
+Title: SUID binary found: ssh-agent
+Description: Binary /usr/bin/ssh-agent has SUID/SGID bit set. May be exploitable if vulnerable or misconfigured.
+Evidence: Binary: /usr/bin/ssh-agent
+Permissions: rwxr-sr-x
+Remediation: Review necessity of SUID bit for /usr/bin/ssh-agent
+
+--------------------------------------------------------------------------------
+
+Finding #32
+Severity: HIGH
+Vector: SUID/SGID
+Title: SUID binary found: pkexec
+Description: Binary /usr/bin/pkexec has SUID/SGID bit set. May be exploitable if vulnerable or misconfigured.
+Evidence: Binary: /usr/bin/pkexec
+Permissions: rwsr-xr-x
+Remediation: Review necessity of SUID bit for /usr/bin/pkexec
+
+--------------------------------------------------------------------------------
+
+Finding #33
+Severity: HIGH
+Vector: SUID/SGID
+Title: SUID binary found: kismet_cap_nxp_kw41z
+Description: Binary /usr/bin/kismet_cap_nxp_kw41z has SUID/SGID bit set. May be exploitable if vulnerable or misconfigured.
+Evidence: Binary: /usr/bin/kismet_cap_nxp_kw41z
+Permissions: rwsr-xr--
+Remediation: Review necessity of SUID bit for /usr/bin/kismet_cap_nxp_kw41z
+
+--------------------------------------------------------------------------------
+
+Finding #34
+Severity: HIGH
+Vector: SUID/SGID
+Title: SUID binary found: kismet_cap_nrf_mousejack
+Description: Binary /usr/bin/kismet_cap_nrf_mousejack has SUID/SGID bit set. May be exploitable if vulnerable or misconfigured.
+Evidence: Binary: /usr/bin/kismet_cap_nrf_mousejack
+Permissions: rwsr-xr--
+Remediation: Review necessity of SUID bit for /usr/bin/kismet_cap_nrf_mousejack
+
+--------------------------------------------------------------------------------
+
+Finding #35
+Severity: HIGH
+Vector: SUID/SGID
+Title: SUID binary found: dotlockfile
+Description: Binary /usr/bin/dotlockfile has SUID/SGID bit set. May be exploitable if vulnerable or misconfigured.
+Evidence: Binary: /usr/bin/dotlockfile
+Permissions: rwxr-sr-x
+Remediation: Review necessity of SUID bit for /usr/bin/dotlockfile
+
+--------------------------------------------------------------------------------
+
+Finding #36
+Severity: HIGH
+Vector: SUID/SGID
+Title: SUID binary found: mount
+Description: Binary /usr/bin/mount has SUID/SGID bit set. May be exploitable if vulnerable or misconfigured.
+Evidence: Binary: /usr/bin/mount
+Permissions: rwsr-xr-x
+Remediation: Review necessity of SUID bit for /usr/bin/mount
+
+--------------------------------------------------------------------------------
+
+Finding #37
+Severity: HIGH
+Vector: SUID/SGID
+Title: SUID binary found: kismet_cap_rz_killerbee
+Description: Binary /usr/bin/kismet_cap_rz_killerbee has SUID/SGID bit set. May be exploitable if vulnerable or misconfigured.
+Evidence: Binary: /usr/bin/kismet_cap_rz_killerbee
+Permissions: rwsr-xr--
+Remediation: Review necessity of SUID bit for /usr/bin/kismet_cap_rz_killerbee
+
+--------------------------------------------------------------------------------
+
+Finding #38
+Severity: HIGH
+Vector: SUID/SGID
+Title: SUID binary found: kismet_cap_ubertooth_one
+Description: Binary /usr/bin/kismet_cap_ubertooth_one has SUID/SGID bit set. May be exploitable if vulnerable or misconfigured.
+Evidence: Binary: /usr/bin/kismet_cap_ubertooth_one
+Permissions: rwsr-xr--
+Remediation: Review necessity of SUID bit for /usr/bin/kismet_cap_ubertooth_one
+
+--------------------------------------------------------------------------------
+
+Finding #39
+Severity: HIGH
+Vector: SUID/SGID
+Title: SUID binary found: plocate
+Description: Binary /usr/bin/plocate has SUID/SGID bit set. May be exploitable if vulnerable or misconfigured.
+Evidence: Binary: /usr/bin/plocate
+Permissions: rwxr-sr-x
+Remediation: Review necessity of SUID bit for /usr/bin/plocate
+
+--------------------------------------------------------------------------------
+
+Finding #40
+Severity: HIGH
+Vector: SUID/SGID
+Title: SUID binary found: sudo
+Description: Binary /usr/bin/sudo has SUID/SGID bit set. May be exploitable if vulnerable or misconfigured.
+Evidence: Binary: /usr/bin/sudo
+Permissions: rwsr-xr-x
+Remediation: Review necessity of SUID bit for /usr/bin/sudo
+
+--------------------------------------------------------------------------------
+
+Finding #41
+Severity: HIGH
+Vector: SUID/SGID
+Title: SUID binary found: kismet_cap_linux_bluetooth
+Description: Binary /usr/bin/kismet_cap_linux_bluetooth has SUID/SGID bit set. May be exploitable if vulnerable or misconfigured.
+Evidence: Binary: /usr/bin/kismet_cap_linux_bluetooth
+Permissions: rwsr-xr--
+Remediation: Review necessity of SUID bit for /usr/bin/kismet_cap_linux_bluetooth
+
+--------------------------------------------------------------------------------
+
+Finding #42
+Severity: HIGH
+Vector: SUID/SGID
+Title: SUID binary found: rsh-redone-rsh
+Description: Binary /usr/bin/rsh-redone-rsh has SUID/SGID bit set. May be exploitable if vulnerable or misconfigured.
+Evidence: Binary: /usr/bin/rsh-redone-rsh
+Permissions: rwsr-xr-x
+Remediation: Review necessity of SUID bit for /usr/bin/rsh-redone-rsh
+
+--------------------------------------------------------------------------------
+
+Finding #43
+Severity: HIGH
+Vector: SUID/SGID
+Title: SUID binary found: chage
+Description: Binary /usr/bin/chage has SUID/SGID bit set. May be exploitable if vulnerable or misconfigured.
+Evidence: Binary: /usr/bin/chage
+Permissions: rwxr-sr-x
+Remediation: Review necessity of SUID bit for /usr/bin/chage
+
+--------------------------------------------------------------------------------
+
+Finding #44
+Severity: HIGH
+Vector: SUID/SGID
+Title: SUID binary found: chfn
+Description: Binary /usr/bin/chfn has SUID/SGID bit set. May be exploitable if vulnerable or misconfigured.
+Evidence: Binary: /usr/bin/chfn
+Permissions: rwsr-xr-x
+Remediation: Review necessity of SUID bit for /usr/bin/chfn
+
+--------------------------------------------------------------------------------
+
+Finding #45
+Severity: HIGH
+Vector: SUID/SGID
+Title: SUID binary found: umount
+Description: Binary /usr/bin/umount has SUID/SGID bit set. May be exploitable if vulnerable or misconfigured.
+Evidence: Binary: /usr/bin/umount
+Permissions: rwsr-xr-x
+Remediation: Review necessity of SUID bit for /usr/bin/umount
+
+--------------------------------------------------------------------------------
+
+Finding #46
+Severity: HIGH
+Vector: SUID/SGID
+Title: SUID binary found: kismet_cap_ti_cc_2531
+Description: Binary /usr/bin/kismet_cap_ti_cc_2531 has SUID/SGID bit set. May be exploitable if vulnerable or misconfigured.
+Evidence: Binary: /usr/bin/kismet_cap_ti_cc_2531
+Permissions: rwsr-xr--
+Remediation: Review necessity of SUID bit for /usr/bin/kismet_cap_ti_cc_2531
+
+--------------------------------------------------------------------------------
+
+Finding #47
+Severity: HIGH
+Vector: SUID/SGID
+Title: SUID binary found: chrome-sandbox
+Description: Binary /opt/Vysor/chrome-sandbox has SUID/SGID bit set. May be exploitable if vulnerable or misconfigured.
+Evidence: Binary: /opt/Vysor/chrome-sandbox
+Permissions: rwsr-xr-x
+Remediation: Review necessity of SUID bit for /opt/Vysor/chrome-sandbox
+
+--------------------------------------------------------------------------------
+
+Finding #48
+Severity: HIGH
+Vector: PASSWD/SHADOW
+Title: Readable password backup: passwd-
+Description: Backup password file /etc/passwd- is readable. May contain old credentials or configuration.
+Evidence: File: /etc/passwd-
+Readable by current user
+Remediation: Secure or remove backup file: /etc/passwd-
+
+--------------------------------------------------------------------------------
+
+Finding #49
+Severity: MEDIUM
+Vector: KERNEL
+Title: Kernel version: 7.1.5+kali-amd64
+Description: System information:
+Kernel: 7.1.5+kali-amd64
+System: Linux
+Machine: x86_64
+Evidence: uname -r output: 7.1.5+kali-amd64
+Remediation: Check kernel version against known exploits
+
+--------------------------------------------------------------------------------
+
+Finding #50
+Severity: MEDIUM
+Vector: KERNEL
+Title: Kernel exploit enumeration recommended
+Description: Use specialized tools for comprehensive kernel exploit checking:
+• linux-exploit-suggester
+• Linux Kernel CVE Exploits
+• searchsploit
+Evidence: Current kernel: 7.1.5+kali-amd64
+Remediation: Run: searchsploit linux kernel 7.1.5+kali
+Or: wget https://raw.githubusercontent.com/mzet-/linux-exploit-suggester/master/linux-exploit-suggester.sh
+chmod +x linux-exploit-suggester.sh && ./linux-expl...
+
+--------------------------------------------------------------------------------
+
+Finding #51
+Severity: MEDIUM
+Vector: CAPABILITIES
+Title: Capability found on gst-ptp-helper cap_net_bind_service,cap_net_admin,cap_sys_nice: ep
+Description: Binary /usr/lib/x86_64-linux-gnu/gstreamer1.0/gstreamer-1.0/gst-ptp-helper cap_net_bind_service,cap_net_admin,cap_sys_nice has ep capability. Review for potential exploitation.
+Evidence: Binary: /usr/lib/x86_64-linux-gnu/gstreamer1.0/gstreamer-1.0/gst-ptp-helper cap_net_bind_service,cap_net_admin,cap_sys_nice
+Capability: ep
+Remediation: Research exploitation techniques for ep
+
+--------------------------------------------------------------------------------
+
+Finding #52
+Severity: MEDIUM
+Vector: CAPABILITIES
+Title: Capability found on snap-confine cap_chown,cap_dac_override,cap_dac_read_search,cap_fowner,cap_sys_chroot,cap_sys_ptrace,cap_sys_admin,cap_sys_resource: p
+Description: Binary /usr/lib/snapd/snap-confine cap_chown,cap_dac_override,cap_dac_read_search,cap_fowner,cap_sys_chroot,cap_sys_ptrace,cap_sys_admin,cap_sys_resource has p capability. Review for potential exploitation.
+Evidence: Binary: /usr/lib/snapd/snap-confine cap_chown,cap_dac_override,cap_dac_read_search,cap_fowner,cap_sys_chroot,cap_sys_ptrace,cap_sys_admin,cap_sys_resource
+Capability: p
+Remediation: Research exploitation techniques for p
+
+--------------------------------------------------------------------------------
+
+Finding #53
+Severity: MEDIUM
+Vector: CAPABILITIES
+Title: Capability found on nmap cap_net_bind_service,cap_net_admin,cap_net_raw: eip
+Description: Binary /usr/lib/nmap/nmap cap_net_bind_service,cap_net_admin,cap_net_raw has eip capability. Review for potential exploitation.
+Evidence: Binary: /usr/lib/nmap/nmap cap_net_bind_service,cap_net_admin,cap_net_raw
+Capability: eip
+Remediation: Research exploitation techniques for eip
+
+--------------------------------------------------------------------------------
+
+Finding #54
+Severity: MEDIUM
+Vector: CAPABILITIES
+Title: Capability found on dumpcap cap_net_admin,cap_net_raw: eip
+Description: Binary /usr/bin/dumpcap cap_net_admin,cap_net_raw has eip capability. Review for potential exploitation.
+Evidence: Binary: /usr/bin/dumpcap cap_net_admin,cap_net_raw
+Capability: eip
+Remediation: Research exploitation techniques for eip
+
+--------------------------------------------------------------------------------
+
+Finding #55
+Severity: MEDIUM
+Vector: CAPABILITIES
+Title: Capability found on fping cap_net_raw: ep
+Description: Binary /usr/bin/fping cap_net_raw has ep capability. Review for potential exploitation.
+Evidence: Binary: /usr/bin/fping cap_net_raw
+Capability: ep
+Remediation: Research exploitation techniques for ep
+
+--------------------------------------------------------------------------------
+
